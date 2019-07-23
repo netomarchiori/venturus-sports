@@ -1,0 +1,230 @@
+<app-layout>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <i class="fa fa-square fa-3x fa-pull-left" style="color:#00C098"></i>
+        <h1>
+          Venturus Sports
+        </h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <div style="border: 1x solid black; border-radius: 50%; padding:10px;">{{ userInfo.initials }}</div>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ userInfo.name }}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Friends List</a>
+                <a class="dropdown-item" href="#">Saved Items</a>
+                <a class="dropdown-item" href="#">Notifications</a>
+                <a class="dropdown-item" href="#">User Preferences</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Log out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>
+
+<div id="breadcrumb" class="row" >
+    <div class="col" style="height: 38px; line-height: 38px;">
+      <i class="fa fa-home" style="color: #00C098;"></i>
+      <i class="fa fa-angle-right"></i>
+      <span><a href="">Page Name</a></span>
+      <i class="fa fa-angle-right"></i>
+      <span><a href="">...</a></span>
+      <i class="fa fa-angle-right"></i>
+      <span class="breadcrumb-current-page">Current Page</span>
+    </div>
+</div>  
+
+<div id="callout" class="row">
+  <div id="callout-item" class="col-md-2">
+    <i class="fa fa-puzzle-piece fa-4x fa-pull-left"></i>
+    <span>Sport Type</span>
+    <p class="callout-text-bigger">Cycling</p>
+  </div>
+
+  <div id="callout-item" class="col-md-2">
+    <i class="fa fa-trophy fa-4x fa-pull-left"></i>
+    <span>Mode</span>
+    <p class="callout-text-bigger">Advanced</p>
+  </div>
+
+  <div id="callout-item" class="col-md-2">
+    <i class="fa fa-map-signs fa-4x fa-pull-left"></i>
+    <span>Route</span>
+    <p class="callout-text-bigger">30 miles</p>
+  </div>
+</div>
+
+<div id="users" class="row">
+  <div class="col-md-12">
+    <h2>Users</h2>
+  </div>
+</div>
+
+<ngx-datatable
+      [rows]="dataTableRows"
+      class="bootstrap"
+      [columnMode]="'flex'"
+      [headerHeight]="48"
+      [rowHeight]="48"
+      [trackByProp]="'updated'">
+
+      <ngx-datatable-column prop="username" name="Username" [sortable]="false" [flexGrow]="3"></ngx-datatable-column>
+      <ngx-datatable-column prop="name" name="Name" [sortable]="false" [flexGrow]="3"></ngx-datatable-column>
+      <ngx-datatable-column prop="email" name="E-mail" [sortable]="false" [flexGrow]="3"></ngx-datatable-column>
+      <ngx-datatable-column prop="address.city" name="City" [sortable]="false" [flexGrow]="3"></ngx-datatable-column>
+      <ngx-datatable-column prop="rideInGroup" name="Ride in Group" [sortable]="false" [flexGrow]="3"></ngx-datatable-column>
+      <ngx-datatable-column prop="daysOfTheWeek" name="Days of the week" [sortable]="false" [flexGrow]="3"></ngx-datatable-column>
+      <ngx-datatable-column prop="posts" name="Posts" [sortable]="false" [flexGrow]="1"></ngx-datatable-column>
+      <ngx-datatable-column prop="albums" name="Albums" [sortable]="false" [flexGrow]="1"></ngx-datatable-column>
+      <ngx-datatable-column prop="photos" name="Photos" [sortable]="false" [flexGrow]="1"></ngx-datatable-column>
+      <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+          <ng-template ngx-datatable-cell-template let-row="row">
+              <i class="fa fa-trash" aria-hidden="true" (click)="confirmRemoveSingleItem(row)"></i>
+          </ng-template>
+      </ngx-datatable-column>
+  </ngx-datatable>
+
+<div id="registration" class="row">
+    <div class="col-md-8">
+      <h2>Registration</h2>
+    </div>
+</div>
+<div  id="registration" class="row">
+  <div class="col-md-4" id="registration-item">
+    <h3>Need help?</h3>
+    <i class="fa fa-life-ring fa-4x fa-pull-left"></i>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.
+    </p>
+  </div>
+  <div class="col-md-4" id="registration-item">
+    <h3>Why register?</h3>
+    <i class="fa fa-heartbeat fa-4x fa-pull-left"></i>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.
+    </p>
+  </div>
+  <div class="col-md-4" id="registration-item">
+    <h3>What people are saying...</h3>
+    <i class="fa fa-smile-o fa-4x fa-pull-left"></i>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.
+    </p>
+  </div>
+</div>
+<div id="registration_form" class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" style="border-top: #CECECD solid 1px; padding-top: 50px;">
+      <div class="row">
+          <div class="col-md-5">
+                <div class="form-group">
+                  <label for="inputUsername">Username</label>
+                  <input type="text" class="form-control" id="inputUsername" aria-describedby="usernameHelp" [(ngModel)]="newItemData.username">
+                  <small id="usernameHelp" class="form-text text-muted">Instructions to show on input focus.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName" [(ngModel)]="newItemData.name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">E-mail</label>
+                    <input type="email" class="form-control" id="inputEmail1" [(ngModel)]="newItemData.email">
+                </div>
+                      
+                <button type="submit" class="btn btn-primary" style="background-color: #00C098; border-color: #00C098; margin-right: 6px;" (click)="saveNewItem(newItemData)">Save</button>
+
+                <button type="submit" class="btn">Discard</button>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
+              <div class="form-group">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity" [(ngModel)]="newItemData.address.city">
+                  <small id="cityHelp" class="form-text text-muted">&nbsp;</small>
+              </div>
+              <div class="form-group">
+                  <label>Ride in group?</label>
+                  <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Always" [(ngModel)]="newItemData.rideInGroup">
+                        <label class="form-check-label" for="inlineRadio1">Always</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Sometimes" [(ngModel)]="newItemData.rideInGroup">
+                      <label class="form-check-label" for="inlineRadio2">Sometimes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Never" [(ngModel)]="newItemData.rideInGroup">
+                      <label class="form-check-label" for="inlineRadio3">Never</label>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label>Days of the week</label>
+                  <div class="form-group">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Sun" [(ngModel)]="newItemData.daysOfTheWeek.Sun">
+                      <label class="form-check-label" for="inlineCheckbox1">Sun</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Mon" [(ngModel)]="newItemData.daysOfTheWeek.Mon">
+                      <label class="form-check-label" for="inlineCheckbox2">Mon</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Tue" [(ngModel)]="newItemData.daysOfTheWeek.Tue">
+                        <label class="form-check-label" for="inlineCheckbox3">Tue</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Wed" [(ngModel)]="newItemData.daysOfTheWeek.Wed">
+                        <label class="form-check-label" for="inlineCheckbox4">Wed</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Thu" [(ngModel)]="newItemData.daysOfTheWeek.Thu">
+                        <label class="form-check-label" for="inlineCheckbox5">Thu</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Fri" [(ngModel)]="newItemData.daysOfTheWeek.Fri">
+                        <label class="form-check-label" for="inlineCheckbox6">Fri</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Sat" [(ngModel)]="newItemData.daysOfTheWeek.Sat">
+                        <label class="form-check-label" for="inlineCheckbox7">Sat</label>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+
+<!-- Remove Single Item Modal -->
+<div class="modal-backdrop show" [ngStyle]="{'display':displayRemoveSingleItemModal}"></div>
+<div class="modal" id="modalRemoveItemTitle" tabindex="-1" role="dialog" aria-labelledby="modalRemoveItemTitle" aria-hidden="true" [ngStyle]="{'display':displayRemoveSingleItemModal}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditItemTitle">Excluir Usuário</h5>
+        </div>
+        <div class="modal-body">
+          <p>Deseja realmente excluir o usuário {{removeSingleItemData.name}}?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary float-left" (click)="dismissRemoveSingleItemModal()">Cancelar</button>
+          <button type="button" class="btn btn-danger float-right" (click)="removeSingleItem(removeSingleItemData)">Excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</app-layout>

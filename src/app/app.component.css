@@ -1,0 +1,97 @@
+/*navbar*/
+.navbar{
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+.navbar h1{
+    color: #333534; 
+    font-weight: bold;
+    font-size: 16px
+}
+
+.navlink{
+    color: #333534; 
+}
+
+.dropdown-menu a:hover{
+    color: #00C098;
+}
+
+/*breadcrumb*/
+#breadcrumb{
+    font-size: 12px;
+    padding-left: 16px; 
+    border-top: #FDFDFD 1px solid; 
+    background-color: #FAF9F9; 
+    color: #9A9691;
+}
+
+#breadcrumb div span{
+    color: #333534; 
+    margin-right: 18px;
+}
+
+#breadcrumb div span a{
+    color: #00C098; 
+}
+
+#breadcrumb div span a:hover{
+    color: #00C098;
+    text-decoration: underline;
+}
+
+#breadcrumb div i{
+    color: #9A9691; 
+    margin-right: 18px;
+}
+
+/*callout*/
+
+#callout{
+    background-color: #B3EDE1; 
+    height: 130px; 
+    padding-top: 40px; 
+    padding-left: 16px; 
+    font-size: 12px;
+}
+
+#callout-item{
+    color: #656460
+}
+
+#callout-item h3{
+    color: #656460
+}
+
+#callout-item i{
+    color: #24CAA7
+}
+
+#callout-item p{
+    color:#333534;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*users*/
+#users{
+    padding-left: 16px; 
+    margin-top: 56px;
+    margin-bottom: 56px;
+}
+
+/*registration*/
+#registration{
+    padding-left: 16px; 
+    margin-top: 56px;
+    margin-bottom: 56px;
+}
+
+#registration-item{
+    color: #00C098;
+}
+
+#registration-item p{
+    color: #656460;
+}

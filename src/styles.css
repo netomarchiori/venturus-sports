@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+/*
+Specifically for DataTables
+*/
+
+ngx-datatable{
+    font-weight: 600;
+}
+
+.datatable-header-cell{
+    vertical-align: middle !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+/* rows */
+
+.datatable-body-cell-label
+{
+   padding-top: 12px;
+}
+
+.datatable-row-center {
+    padding-left: 16px;
+}
+
+.datatable-row-even {
+    background: #FFFFFF;
+}
+
+.datatable-row-odd {
+    background: #F9F8F8;
+}
+
+.datatable-body-row:hover {
+    background: #E6E5E1;
+}
+
+datatable-body-row > div > datatable-body-cell > div > i.fa.fa-trash  {
+    visibility: hidden;
+}
+
+datatable-body-row:hover > div > datatable-body-cell > div > i.fa.fa-trash  {
+    visibility: visible;
+}
+
+.datatable-body-cell:nth-child(3) {
+    color: #24CAA7;
+}
+
+.datatable-body-cell:nth-child(4) {
+    color: #24CAA7;
+}
+
+.datatable-body-cell:nth-child(7) {
+    color: #24CAA7;
+}
+
+.datatable-body-cell:nth-child(8) {
+    color: #24CAA7;
+}
